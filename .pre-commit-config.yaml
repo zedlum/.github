@@ -13,3 +13,8 @@ repos:
         language: system
         pass_filenames: false
         stages: [pre-commit]
+      - id: check-ai-markers
+        name: reject AI-tool attribution markers
+        entry: python3 scripts/check-ai-markers.py
+        language: system
+        stages: [commit-msg]
